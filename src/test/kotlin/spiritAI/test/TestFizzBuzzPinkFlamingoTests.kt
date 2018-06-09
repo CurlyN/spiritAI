@@ -1,16 +1,19 @@
 package spiritAI.test
 
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.test.context.junit4.SpringRunner
 
-@RunWith(SpringRunner::class)
-@SpringBootTest
+import org.junit.Assert
+import org.junit.Test
+
 class TestFizzBuzzPinkFlamingoTests {
 
 	@Test
-	fun contextLoads() {
+	fun returnFizzOnNumbersMultiple3() {
+		val expectedResult = Array(5, { "0";"1"; "2";"Fizz";"4"})
+		val actualResult = FizzBuzzPinkFlamingo().getSequence(5)
+		Assert.assertTrue(expectedResult contentEquals actualResult)
+
 	}
 
 }
+
+
