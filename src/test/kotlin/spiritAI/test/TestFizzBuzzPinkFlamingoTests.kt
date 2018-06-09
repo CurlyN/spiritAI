@@ -15,8 +15,10 @@ class TestFizzBuzzPinkFlamingoTests {
 
 	@Test
 	fun returnFizzOnNumbersMultiple5() {
-		val expectedResult: MutableList<String> = mutableListOf("0", "1", "2","Fizz", "4", "Buzz")
+		val expectedResult: MutableList<String> = mutableListOf("0", "1", "2", "Fizz", "4", "Buzz")
 		val actualResult = FizzBuzzPinkFlamingo().getSequence(5)
+		println(expectedResult)
+		println(actualResult)
 		Assert.assertTrue(expectedResult.equals(actualResult))
 	}
 

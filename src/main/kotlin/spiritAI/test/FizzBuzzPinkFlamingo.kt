@@ -6,7 +6,8 @@ class FizzBuzzPinkFlamingo {
 
         for (i in 0..lengthOfSequence) {
            if (isMultiple3(i)) result.add("Fizz")
-            else result.add(i.toString())
+            else if (isMultiple5(i)) result.add("Buzz")
+             else result.add(i.toString())
         }
         return result
     }
@@ -14,6 +15,13 @@ class FizzBuzzPinkFlamingo {
     fun isMultiple3(number: Int): Boolean{
 
         if (number!=0 && number % 3 == 0) return true
+
+        return false
+    }
+
+    fun isMultiple5(number: Int): Boolean{
+
+        if (number!=0 && number % 5 == 0) return true
 
         return false
     }
