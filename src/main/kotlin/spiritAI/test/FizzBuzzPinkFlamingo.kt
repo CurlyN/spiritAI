@@ -5,24 +5,18 @@ class FizzBuzzPinkFlamingo {
         val result = mutableListOf<String>()
 
         for (i in 0..lengthOfSequence) {
-           if (isMultiple3(i)) result.add("Fizz")
-            else if (isMultiple5(i)) result.add("Buzz")
+           if (isMultipleToNumber(i, 3)) result.add("Fizz")
+            else if (isMultipleToNumber(i, 5)) result.add("Buzz")
              else result.add(i.toString())
         }
         return result
     }
 
-    fun isMultiple3(number: Int): Boolean{
+    fun isMultipleToNumber(number: Int, devider: Int): Boolean{
 
-        if (number!=0 && number % 3 == 0) return true
-
-        return false
-    }
-
-    fun isMultiple5(number: Int): Boolean{
-
-        if (number!=0 && number % 5 == 0) return true
+        if (number!=0 && number % devider == 0) return true
 
         return false
     }
+
 }
