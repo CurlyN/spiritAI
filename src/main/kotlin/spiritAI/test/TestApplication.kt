@@ -8,4 +8,5 @@ class TestApplication
 
 fun main(args: Array<String>) {
     println(FizzBuzzPinkFlamingo().getSequence(100))
+    println(RomanCalculator().calculateRomanNumbers("(VIII+X)/VI-C"))
 }
