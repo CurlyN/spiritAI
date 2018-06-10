@@ -37,4 +37,17 @@ public class RomanNumbersConverter {
 
         return arabExpression;
     }
+
+
+    public String convertArabNumbersToRoman(int number) {
+        String romanNumber = "";
+        for (int i = 0; i < ARAB_NUMBERS.length; i++) {
+            while (number >= ARAB_NUMBERS[i]) {
+                romanNumber +=ROMAN_NUMBERS[i];
+                number -=ARAB_NUMBERS[i];
+            }
+        }
+
+        return  romanNumber;
+    }
 }

@@ -24,5 +24,14 @@ public class RomanCalculatorTests {
         assertEquals("7/10", converter.convertRomanExpression("VII/X"));
     }
 
+    @Test
+    public void convertArabNumbersToRoman() {
+        RomanNumbersConverter converter = new RomanNumbersConverter();
+
+        assertEquals("IX", converter.convertArabNumbersToRoman(9));
+        assertEquals("MMXVIII", converter.convertArabNumbersToRoman(2018));
+        assertEquals("CVI", converter.convertArabNumbersToRoman(106));
+    }
+
 
 }
