@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class TestApplication
 
 fun main(args: Array<String>) {
-
+    println(FizzBuzzPinkFlamingo().getSequence(100))
 }
