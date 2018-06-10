@@ -2,6 +2,8 @@ package spiritAI.test;
 
 import org.junit.Test;
 
+import javax.script.ScriptException;
+
 import static org.junit.Assert.assertEquals;
 
 public class RomanCalculatorTests {
@@ -31,6 +33,16 @@ public class RomanCalculatorTests {
         assertEquals("IX", converter.convertArabNumbersToRoman(9));
         assertEquals("MMXVIII", converter.convertArabNumbersToRoman(2018));
         assertEquals("CVI", converter.convertArabNumbersToRoman(106));
+    }
+
+
+    @Test
+    public void calculateRomanExpression() throws ScriptException {
+        RomanCalculator calculator = new RomanCalculator();
+
+        assertEquals("3", calculator.calculateRomanNumbers("(VIII+X)/VI"));
+        assertEquals("5", calculator.calculateRomanNumbers("XXV/V"));
+        assertEquals("10", calculator.calculateRomanNumbers("C/X"));
     }
 
 
