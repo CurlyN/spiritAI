@@ -5,13 +5,13 @@ class FizzBuzzPinkFlamingo {
         val result = mutableListOf<String>()
 
         for (i in 0..lengthOfSequence) {
-
+            //Perform checks of the number in the sequence, add space after FizzBuzz if the number is not Fibonacci
             val printFromCheckOfFibonacci = checkForFibonacciNumber(i)
             var printFromCheckOfMultiple = checkForMultipleToNumber(i)
             printFromCheckOfMultiple = if (printFromCheckOfFibonacci != "" && printFromCheckOfMultiple!="")
                 printFromCheckOfMultiple.plus(" ") else printFromCheckOfMultiple
 
-
+            //Change FizzBuzzFlamingo into Pink Flamingo or return combined result
             if (printFromCheckOfMultiple == "" && printFromCheckOfFibonacci == "") result.add(i.toString())
             else if (printFromCheckOfMultiple + printFromCheckOfFibonacci == "FizzBuzzFlamingo") result.add("Pink Flamingo")
             else result.add(printFromCheckOfMultiple.plus(printFromCheckOfFibonacci))
@@ -44,7 +44,7 @@ class FizzBuzzPinkFlamingo {
     }
     fun isPerfectSquare(number: Int): Boolean{
         val s = kotlin.math.sqrt(number.toDouble()).toInt();
-        return (s*s == number);
+        return (s*s == number)
     }
 
 

@@ -48,7 +48,9 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile('org.springframework.boot:spring-boot-starter-web')
 }
-
+sourceSets {
+	main.java.srcDirs += 'src/main/kotlin'
+}
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 	kotlinOptions {
 		jvmTarget = "1.8"
