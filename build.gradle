@@ -1,5 +1,4 @@
 buildscript {
-	ext.kotlin_version = '1.2.41'
 	ext {
 		kotlinVersion = '1.2.41'
 		springBootVersion = '2.0.2.RELEASE'
@@ -11,7 +10,6 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
 		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
-		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 	}
 }
 
@@ -45,12 +43,14 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.jetbrains.kotlin:kotlin-reflect")
 	compile group: 'org.springframework', name: 'spring-web', version: '5.0.6.RELEASE'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+	compile('org.springframework.boot:spring-boot-starter-web')
 }
-sourceSets {
-	main.java.srcDirs += 'src/main/kotlin'
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+	kotlinOptions {
+		jvmTarget = "1.8"
+	}
 }
