@@ -1,7 +1,11 @@
 package spiritAI.test;
 
 public class Expression {
-    String expression;
+    private String expression;
+
+    public Expression(String expression){
+        this.expression = expression;
+    }
 
     public void setExpression(String exp){
         this.expression = exp;
