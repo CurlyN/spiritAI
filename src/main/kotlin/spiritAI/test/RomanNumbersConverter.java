@@ -20,23 +20,25 @@ public class RomanNumbersConverter {
 
     public String convertRomanExpression(String expression) {
         List<String> numbersList = Arrays.asList(ROMAN_NUMBERS);
-        String romanNumber = "";
+        StringBuilder romanNumber = new StringBuilder();
         String arabExpression = expression;
 
         //if character is roman number, collect into word and then convert into Arabic format
-        for (int i = 0; i < expression.length(); i++) {
-            if (numbersList.contains(expression.substring(i, i + 1)) && i!=expression.length()) {
-                romanNumber += expression.substring(i, i + 1);
+        for (int i = 1; i <= expression.length(); i++) {
+            if (numbersList.contains(expression.substring(i-1, i))) {
+                romanNumber.append(expression, i-1, i);
             } else {
-                //if character is not an roman number, check if we have words to convert
-                if (!romanNumber.equals("")) {
-                    arabExpression = arabExpression.replaceFirst(romanNumber, String.valueOf(convertFromRomanNumbers(romanNumber)));
-                    romanNumber = "";
+                //if character is not a roman number, check if we have words to convert
+                if (romanNumber.length()!=0) {
+                    String romanNumberString = romanNumber.toString();
+                    arabExpression = arabExpression.replaceFirst(romanNumberString, String.valueOf(convertFromRomanNumbers(romanNumberString)));
+                    romanNumber = new StringBuilder();
                 }
             }
         }
         //convert the last word left
-        arabExpression = arabExpression.replaceFirst(romanNumber, String.valueOf(convertFromRomanNumbers(romanNumber)));
+        String romanNumberString = romanNumber.toString();
+        arabExpression = arabExpression.replaceFirst(romanNumberString, String.valueOf(convertFromRomanNumbers(romanNumberString)));
 
         return arabExpression;
     }
