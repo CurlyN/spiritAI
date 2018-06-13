@@ -23,7 +23,7 @@ public class RomanNumbersConverter {
         String romanNumber = "";
         String arabExpression = expression;
 
-        //if roman number, collect into word and then convert into Arabic format
+        //if character is roman number, collect into word and then convert into Arabic format
         for (int i = 0; i < expression.length(); i++) {
             if (numbersList.contains(expression.substring(i, i + 1)) && i!=expression.length()) {
                 romanNumber += expression.substring(i, i + 1);
