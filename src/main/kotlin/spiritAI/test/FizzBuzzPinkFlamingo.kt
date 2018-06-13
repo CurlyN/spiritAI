@@ -5,16 +5,19 @@ class FizzBuzzPinkFlamingo {
         val result = mutableListOf<String>()
 
         for (i in 0..lengthOfSequence) {
-            //Perform checks of the number in the sequence, add space after FizzBuzz if the number is not Fibonacci
-            val printFromCheckOfFibonacci = checkForFibonacciNumber(i)
-            var printFromCheckOfMultiple = checkForMultipleToNumber(i)
-            printFromCheckOfMultiple = if (!printFromCheckOfFibonacci.equals("") && !printFromCheckOfMultiple.equals(""))
-                printFromCheckOfMultiple.plus(" ") else printFromCheckOfMultiple
+            //Perform checks of the number in the sequence
+            val checkResultOfFibonacci = checkForFibonacciNumber(i)
+            var checkResultOfMultiplication = checkForMultipleToNumber(i)
+
+            //Add space after FizzBuzz if the number is not Fibonacci
+            checkResultOfMultiplication = if (!checkResultOfFibonacci.equals("") && !checkResultOfMultiplication.equals(""))
+                checkResultOfMultiplication.plus(" ") else checkResultOfMultiplication
 
             //Change FizzBuzzFlamingo into Pink Flamingo or return combined result
-            if (printFromCheckOfMultiple.equals("") && printFromCheckOfFibonacci.equals("")) result.add(i.toString())
-            else if ((printFromCheckOfMultiple + printFromCheckOfFibonacci).equals("FizzBuzzFlamingo")) result.add("Pink Flamingo")
-            else result.add(printFromCheckOfMultiple.plus(printFromCheckOfFibonacci))
+            if (checkResultOfMultiplication.equals("") && checkResultOfFibonacci.equals("")) result.add(i.toString())
+            else if ((checkResultOfMultiplication + checkResultOfFibonacci)
+                    .equals("FizzBuzzFlamingo")) result.add("Pink Flamingo")
+            else result.add(checkResultOfMultiplication.plus(checkResultOfFibonacci))
         }
 
         return result
@@ -28,9 +31,7 @@ class FizzBuzzPinkFlamingo {
     }
 
     fun isMultipleToNumber(number: Int, divider: Int): Boolean{
-        if (number!=0 && number % divider == 0) return true
-
-        return false
+        return (number!=0 && number % divider == 0)
     }
 
     fun checkForFibonacciNumber(number: Int): String{
