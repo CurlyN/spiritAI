@@ -15,11 +15,13 @@ public class RomanCalculator {
         ScriptEngineManager mgr = new ScriptEngineManager();
         ScriptEngine engine = mgr.getEngineByName("JavaScript");
         int result;
+
         try {
             result = (int) engine.eval(expressionToEvaluate);
         }catch(ScriptException e) {
             return "Please, enter correct expression";
         }
+
         //convert result into roman
         return romanNumbersConverter.convertArabNumbersToRoman(result);
     }
