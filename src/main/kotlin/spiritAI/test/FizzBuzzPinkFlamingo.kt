@@ -8,12 +8,12 @@ class FizzBuzzPinkFlamingo {
             //Perform checks of the number in the sequence, add space after FizzBuzz if the number is not Fibonacci
             val printFromCheckOfFibonacci = checkForFibonacciNumber(i)
             var printFromCheckOfMultiple = checkForMultipleToNumber(i)
-            printFromCheckOfMultiple = if (printFromCheckOfFibonacci != "" && printFromCheckOfMultiple!="")
+            printFromCheckOfMultiple = if (!printFromCheckOfFibonacci.equals("") && !printFromCheckOfMultiple.equals(""))
                 printFromCheckOfMultiple.plus(" ") else printFromCheckOfMultiple
 
             //Change FizzBuzzFlamingo into Pink Flamingo or return combined result
-            if (printFromCheckOfMultiple == "" && printFromCheckOfFibonacci == "") result.add(i.toString())
-            else if (printFromCheckOfMultiple + printFromCheckOfFibonacci == "FizzBuzzFlamingo") result.add("Pink Flamingo")
+            if (printFromCheckOfMultiple.equals("") && printFromCheckOfFibonacci.equals("")) result.add(i.toString())
+            else if ((printFromCheckOfMultiple + printFromCheckOfFibonacci).equals("FizzBuzzFlamingo")) result.add("Pink Flamingo")
             else result.add(printFromCheckOfMultiple.plus(printFromCheckOfFibonacci))
         }
 

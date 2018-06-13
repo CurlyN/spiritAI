@@ -8,6 +8,5 @@ class FizzBuzzFlamingoController {
 
 
     @GetMapping("/runFizzBuzz")
-    fun run() =
-            FizzBuzzPinkFlamingo().getSequence(100)
+    fun run() = FizzBuzzPinkFlamingo().getSequence(100)
 }
