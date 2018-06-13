@@ -40,10 +40,10 @@ class FizzBuzzPinkFlamingo {
     fun isFibonacci(number: Int): Boolean{
         if (number  == 0) return false
         return isPerfectSquare(5*number*number + 4) ||
-                isPerfectSquare(5*number*number - 4);
+                isPerfectSquare(5*number*number - 4)
     }
     fun isPerfectSquare(number: Int): Boolean{
-        val s = kotlin.math.sqrt(number.toDouble()).toInt();
+        val s = kotlin.math.sqrt(number.toDouble()).toInt()
         return (s*s == number)
     }
 

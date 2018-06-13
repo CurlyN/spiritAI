@@ -23,16 +23,19 @@ public class RomanNumbersConverter {
         String romanNumber = "";
         String arabExpression = expression;
 
+        //if roman number, collect into word and then convert into Arabic format
         for (int i = 0; i < expression.length(); i++) {
             if (numbersList.contains(expression.substring(i, i + 1)) && i!=expression.length()) {
                 romanNumber += expression.substring(i, i + 1);
             } else {
+                //if character is not an roman number, check if we have words to convert
                 if (!romanNumber.equals("")) {
                     arabExpression = arabExpression.replaceFirst(romanNumber, String.valueOf(convertFromRomanNumbers(romanNumber)));
                     romanNumber = "";
                 }
             }
         }
+        //convert the last word left
         arabExpression = arabExpression.replaceFirst(romanNumber, String.valueOf(convertFromRomanNumbers(romanNumber)));
 
         return arabExpression;

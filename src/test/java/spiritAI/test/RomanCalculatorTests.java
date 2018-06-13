@@ -37,12 +37,18 @@ public class RomanCalculatorTests {
 
 
     @Test
-    public void calculateRomanExpression() throws ScriptException {
+    public void calculateRomanExpression(){
         RomanCalculator calculator = new RomanCalculator();
 
         assertEquals("III", calculator.calculateRomanNumbers("(VIII+X)/VI"));
         assertEquals("V", calculator.calculateRomanNumbers("XXV/V"));
         assertEquals("X", calculator.calculateRomanNumbers("C/X"));
+    }
+    @Test
+    public void returnNotificationInCaseWrongExpression(){
+        RomanCalculator calculator = new RomanCalculator();
+
+        assertEquals("Please, enter correct expression", calculator.calculateRomanNumbers("C/Xop"));
     }
 
 
